@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#6561ff</color>
+    <color name="secondary">#FA357B</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="handle">#CFCFCF</color>
+
+    <color name="status_new">#f2e07d</color>
+    <color name="status_pending">#c1f9a2</color>
+    <color name="status_delivered">#16e048</color>
+</resources>

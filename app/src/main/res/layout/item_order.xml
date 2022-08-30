@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="item"
+            type="com.lecezar.packorders.ui.orders.OrderViewModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_order"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitCenter"
+                app:loadImage="@{item.order.imageUrl}"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tv_flower"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="start"
+                android:text="@{item.order.flower}"
+                android:textColor="@color/secondary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                tools:text="Crizantema" />
+
+            <TextView
+                android:id="@+id/tv_order_distance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:gravity="start"
+                android:text="@{`Distance to customer: ` + item.distanceToCustomer}"
+                android:textColor="@color/primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:visible="@{item.distanceToCustomer != null}"
+                tools:text="Distance to customer: 10km" />
+
+            <TextView
+                android:id="@+id/tv_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:gravity="start"
+                android:text="@{`Quantity: ` + String.valueOf(item.order.quantity)}"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Quantity: 1" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>
